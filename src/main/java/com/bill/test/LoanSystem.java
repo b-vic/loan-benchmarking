@@ -21,7 +21,7 @@ public class LoanSystem {
     @OutputTimeUnit(TimeUnit.NANOSECONDS)
     @BenchmarkMode(Mode.AverageTime)
     public void testStreams() {
-        List<Loan> loanList = getLoans(10000);
+        List<Loan> loanList = getLoans(100000);
         List<String> loanCustomers = getCustomersLargeLoanStreams(loanList);
         if (!loanCustomers.contains("123")) {
             throw new RuntimeException("Invalid result!");
@@ -40,7 +40,7 @@ public class LoanSystem {
     @OutputTimeUnit(TimeUnit.NANOSECONDS)
     @BenchmarkMode(Mode.AverageTime)
     public void testLoops() {
-        List<Loan> loanList = getLoans(10000);
+        List<Loan> loanList = getLoans(100000);
         List<String> loanCustomers = getCustomersLargeLoanLoops(loanList);
         if (!loanCustomers.contains("123")) {
             throw new RuntimeException("Invalid result");
